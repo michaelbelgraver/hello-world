@@ -1,0 +1,16 @@
+mysqlimport --ignore-lines=1 --fields-terminated-by=, --columns='userid,username,password,locale,rowState,lastChangedUTC,serverTimeStamp,lastChanged' --local -u root -p Jiffy /Users/m.belgraver/Documents/jiffy_users.csv 
+
+LOAD DATA LOCAL INFILE '/Users/m.belgraver/Documents/jiffy_users.csv' INTO TABLE Jiffy.jiffy_users 
+COLUMNS TERMINATED BY ',' 
+FIELDS ENCLOSED BY '"'
+LINES TERMINATED BY '\r' 
+IGNORE 1 LINES 
+\W
+;
+
+LOAD DATA LOCAL INFILE '/Users/m.belgraver/Documents/jiffy_users.csv' INTO TABLE jiffy_users 
+COLUMNS TERMINATED BY ','  
+LINES TERMINATED BY '\r'  
+IGNORE 1 LINES 
+\W
+;
